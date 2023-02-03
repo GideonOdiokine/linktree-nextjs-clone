@@ -1,0 +1,26 @@
+{
+	"name": "Gideon Odiokine",
+	"avatar": "https://avatars.githubusercontent.com/u/61180360?v=4",
+	"links": [
+		{
+			"title": "My Personal Website",
+			"href": "https://github.com/gideonodiokine",
+			"image": "https://avatars.githubusercontent.com/u/15658638?s=200&v=4"
+		},
+		{
+			"title": "Github",
+			"href": "https://github.com/gideonodiokine",
+			"image": "https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png"
+		}
+	],
+	"socials": [
+		{
+			"title": "Twitter",
+			"href": "https://twitter.com/gideonodiokine"
+		},
+		{
+			"title": "Github",
+			"href": "https://github.com/gideonodiokine"
+		}
+	]
+}
