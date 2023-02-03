@@ -1,5 +1,7 @@
 import Image from "next/image";
-import data from "../data.json";
+import { get } from "@vercel/edge-config";
+
+export const dynamic = "force-dynamic";
 
 function LinkCard({
 	href,
@@ -24,7 +26,9 @@ function LinkCard({
 	);
 }
 
-export default function Home() {
+export default async function HomePage() {
+	const data = await get("linktree");
+
 	return (
 		<div className='flex flex-col items-center justify-center mt-16  px-8'>
 			<Image
@@ -34,10 +38,12 @@ export default function Home() {
 				width={96}
 				height={96}
 			/>
-			<h1 className='font-bold mt-4 text-xl mb-8'>{data.name}</h1>
-			{data.links.map((link) => (
-				<LinkCard key={link.title} {...link} />
-			))}
+			<h1 className='font-bold mt-4 text-xl mb-8'>{data?.name}</h1>
+			{data.links.map(
+				(link: { href: string; title: string; image?: string }) => (
+					<LinkCard key={link.title} {...link} />
+				)
+			)}
 		</div>
 	);
 }
